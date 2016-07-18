@@ -1,0 +1,77 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="45dp"
+        android:contentDescription="@string/not_applicable"
+        android:src="@drawable/main_screen_rocket"/>
+
+    <Button
+        android:id="@+id/buttonOpen"
+        style="@style/ButtonRed"
+        android:onClick="buttonClicked"
+        android:layout_centerInParent="true"
+        android:text="@string/open_button_container"/>
+
+    <com.ostopd.n1.library.SlidingLayer
+        android:id="@+id/slidingLayer1"
+        android:layout_width="@dimen/layer_size"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:elevation="2dip">
+        <!--slidingLayer:shadowDrawable="@drawable/sidebar_shadow"
+        slidingLayer:shadowSize="@dimen/shadow_size"
+        slidingLayer:offsetDistance="@dimen/offset_distance"
+        slidingLayer:previewOffsetDistance="@dimen/preview_offset_distance"
+        slidingLayer:stickTo="top|bottom|right|left"
+        slidingLayer:changeStateOnTap="true">-->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#cc000000"
+            android:windowIsTranslucent="true">
+
+            <TextView
+                android:id="@+id/swipeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:drawablePadding="15dip"
+                android:paddingBottom="80dp"
+                android:textSize="17sp"
+                android:textColor="@color/primary_text"/>
+
+            <Button
+                android:id="@+id/buttonClose"
+                style="@style/ButtonRed"
+                android:onClick="buttonClicked"
+                android:layout_marginBottom="60dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:text="@string/close_button_container"/>
+
+            <EditText
+                android:layout_above="@id/buttonClose"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="sdc"
+                android:hint="kjbhhj"/>
+
+        </RelativeLayout>
+
+    </com.ostopd.n1.library.SlidingLayer>
+
+</RelativeLayout>
